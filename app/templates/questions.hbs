@@ -1,0 +1,77 @@
+
+{{#each question in model}}
+    <div class="object_uuid" data-object_uuid="{{ question.object_uuid }}" style="display: None"></div>
+    <div class="sb_question_header">
+        <div class="row">
+            <div class="vote_count_large">
+                <div class="col-lg-1 hidden-md hidden-sm hidden-xs sb_vote_wrapper_solution">
+
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11 ">
+                <h1 style="font-size:32px;">
+                    {{ question.title }}
+                </h1>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs col-lg-offset-0 col-md-offset-0 col-sm-offset-0">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11 col-lg-offset-1 sb_post_wrapper">
+                <div class="sb_question_body" id="sb_content_{{ question.object_uuid }}">
+                    <div class="sb_markdown" id="sb_content_{{ question.object_uuid }}">
+                        {{{ question.html_content }}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 hidden-sm hidden-xs col-lg-offset-9 col-md-offset-9">
+                <small>
+                    asked by
+                </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs col-lg-offset-9 col-md-offset-9"
+                 style="padding-right:0; margin-right: -10px">
+
+            </div>
+            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs" style="padding-left:0; margin-top:-10px; margin-left: 2px">
+                <div>
+
+                </div>
+                <div style="margin-top:-10px;">
+                    <small>
+                        {{ question.last_edited_on}}
+                    </small>
+                </div>
+            </div>
+            <div class="hidden-lg hidden-md col-sm-11 col-xs-11">
+                <small>
+                </small>
+            </div>
+        </div>
+        <div class="object_uuid" data-object_uuid="{{ question.object_uuid }}"></div>
+
+
+        <div id="sb_comments_container_{{ question.object_uuid }}">
+        </div>
+        <div class="row">
+            <form id="commentSubmitForm">
+            <div class="input-group sb_comment">
+                <textarea class="input-group form-control sb_comment_input"
+                          id="post_comment_on_{{question.object_uuid }}"
+                          rows="2"
+                          name="comment_content"
+                          placeholder="Write your comment..."></textarea>
+                <a class="btn input-group-btn sb_btn_comment_icon comment-action comment_{{ object_uuid }}"
+                   data-object_uuid="{{ question.object_uuid }}"
+                   data-object_type="0274a216-644f-11e4-9ad9-080027242395"><span class="fui-new"></span></a>
+            </div>
+            </form>
+        </div>
+    </div>
+{{/each}}

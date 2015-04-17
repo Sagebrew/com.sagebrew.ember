@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'conversation-area',
+    podModulePrefix: 'app/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -20,11 +21,13 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+      ENV.APP.API_HOST = 'https://192.168.56.101';
+      ENV.APP.API_NAMESPACE = 'v1';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+      ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
@@ -40,6 +43,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+      ENV.APP.API_HOST = "https://www.sagebrew.com";
+      ENV.APP.API_NAMESPACE = 'v1';
 
   }
 
