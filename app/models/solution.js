@@ -1,11 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-    title: DS.attr('string'),
     content: DS.attr('string'),
     html_content: DS.attr('string'),
     href: DS.attr('string'),
-    solution_count: DS.attr('number'),
     is_closed: DS.attr('boolean'),
     last_edited_on: DS.attr('date'),
     created: DS.attr('date'),
@@ -14,6 +12,5 @@ export default DS.Model.extend({
     vote_count: DS.attr('number'),
     vote_type: DS.attr('boolean'),
     view_count: DS.attr('number'),
-    url: DS.attr('string'),
-    solutions: DS.hasMany('solution', {async:true})
+    url: DS.attr('string')
 });
