@@ -1,12 +1,9 @@
-<div class="sb_general">
-    <div class="row">
-        {{ partial "navigation" }}
-    </div>
-    <div class="sb_content_wrapper">
-        {{outlet}}
-    </div>
-    <div class="sb_content_wrapper">
-
-    </div>
+{{ partial "navigation" }}
+<div class="sb_general container-fluid">
+	<div class="row">
+		<div class="sb_content_wrapper col-md-12">
+        	{{outlet}}
+		</div>
+	</div>
 </div>
 
